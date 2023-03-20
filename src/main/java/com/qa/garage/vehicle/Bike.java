@@ -13,7 +13,8 @@ public class Bike extends Vehicle {
 
 	@Override
 	public String toString() {
-		return "Bike [numWheels=" + this.getNumWheels() + ", colour=" + this.getColour() + "]";
+		return "Bike [calcBill()=" + calcBill() + ", getId()=" + getId() + ", getNumWheels()=" + getNumWheels()
+				+ ", getColour()=" + getColour() + "]";
 	}
 
 }
