@@ -3,6 +3,7 @@ package com.qa.garage;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.qa.garage.exceptions.VehicleNotFoundException;
 import com.qa.garage.vehicle.Boat;
 import com.qa.garage.vehicle.Car;
 import com.qa.garage.vehicle.Plane;
@@ -11,6 +12,15 @@ import com.qa.garage.vehicle.Vehicle;
 public class Garage {
 
 	private List<Vehicle> vehicles = new ArrayList<>();
+
+	public Vehicle findById(int id) throws VehicleNotFoundException {
+		for (Vehicle v : vehicles) {
+			if (v.getId() == id) {
+				return v;
+			}
+		}
+		throw new VehicleNotFoundException("No Vehicle found with " + id + " ID.......");
+	}
 
 	public boolean addVehicle(Vehicle v) {
 		return this.vehicles.add(v);
